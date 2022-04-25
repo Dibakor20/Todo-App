@@ -9,6 +9,7 @@ export const TodoCard = styled.div`
   padding: 80px 80px;
   display: flex;
 `;
+
 export const TodoTitle = styled.h3`
   font: 500;
   font-size: 27px;
