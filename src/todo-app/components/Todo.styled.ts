@@ -6,7 +6,7 @@ export const TodoSection = styled.div`
   display: block;
 `
 export const TodoCard = styled.div`
-  padding: 80px 80px;
+  padding: 60px 80px;
   display: flex;
 `;
 
@@ -24,4 +24,8 @@ export const TodoButton = styled.button`
 export const TodoInput = styled.input`
   padding: 10px 0px;
   width: 30%;
+`
+export const Todohold = styled.h3`
+  color: #fff;
+  padding: 0px 80px;
 `

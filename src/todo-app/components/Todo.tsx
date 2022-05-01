@@ -5,10 +5,15 @@ import {
   TodoSection,
   TodoTitle,
   TodoInput,
+  Todohold,
 } from "./Todo.styled";
+import TodoList from "./TodoList";
 
 interface ITask {
   name: string;
+  id?: number;
+  key?: number | string;
+  
 }
 
 const Todo = () => {
@@ -20,12 +25,12 @@ const Todo = () => {
   };
 
   const handleChange = (e:React.FormEvent<HTMLInputElement>) => {
-    setTodoData({...tododata, [e.currentTarget.name]: e.currentTarget.value })
+    setTodoData({...tododata,id:Math.round(Math.random()*9999), [e.currentTarget.name]: e.currentTarget.value })
   }
 
-  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-   e.preventDefault()
-    setData([...data, tododata ])
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault()
+    setData([...data,tododata])
     setToggle(false);
     setTodoData({
       name:""
@@ -51,7 +56,12 @@ const Todo = () => {
             <TodoButton onClick={handleToggle}>Add Task</TodoButton>
           )}
         </TodoCard>
-       
+        <Todohold>On Hold</Todohold>
+            {
+          data?.map((item) => 
+            <TodoList key={item?.id} name={item?.name} />
+              )
+            }
       </TodoSection>
     </>
   );
