@@ -12,6 +12,9 @@ body{
     padding:0 ;
     font-family: 'Open Sans', sans-serif !important;
 }
+*:focus {
+    outline: none;
+}
 `
 export const Container = styled.div`
   max-width: 2600px;
