@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import GlobalStyle from "./GlobalStyled";
 import reportWebVitals from './reportWebVitals';
+import { store } from './redux/Store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
-    <GlobalStyle/>
+      <GlobalStyle />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
