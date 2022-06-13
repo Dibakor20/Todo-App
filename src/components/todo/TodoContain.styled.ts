@@ -76,3 +76,9 @@ export const PlusIcons = styled(AiOutlinePlusSquare)`
     vertical-align: middle;
     margin-right: 5px;
 `
+export const TodoText = styled.h5`
+    font-size: 18px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: gray;
+`

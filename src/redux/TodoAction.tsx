@@ -1,30 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface todoState {
-    id?:number,
-    task: string,
+export interface Itask {
+    id?: number,
+    text:string,
 }
+
+const initialState = {
+    todoList: [] as Itask[],
+};
 
 export const todoSlice = createSlice({
     name: 'todo',
-    initialState: {
-        todoState:[ {
-            id:1,
-            task: 'hellow',  
-        }  ] 
-    },
+    initialState,
     reducers: {
-        Add_Todo: (state,action) => {
-            let newTodoList = {
-                id: Math.random(),
-                task:action.payload.newItem
+        Add_Todo: (state, action:PayloadAction<Itask>) => {
+            const todo = {
+                id:Math.random()*100,
+                text:action.payload.text,
             }
-            state.todoState.push(newTodoList)
+            state.todoList.push(todo)
         }
     }
-}) 
-
+})
 
 export const { Add_Todo } = todoSlice.actions;
-
 export default todoSlice.reducer;
