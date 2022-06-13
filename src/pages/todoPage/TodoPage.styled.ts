@@ -8,7 +8,7 @@ export const TodoBackground = styled.div`
     padding:20px 20px;
 `
 export const CardBackground = styled.div`
-    height: 100%;
+    height: 100% !important;
     width: 100%;
     background-color: #ffffff;
     box-shadow: 0 0 5px;

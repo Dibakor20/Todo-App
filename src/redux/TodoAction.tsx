@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Itask {
     id?: number,
-    text:string,
+    text: string,
+    key?:number | string
 }
 
 const initialState = {

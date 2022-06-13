@@ -4,6 +4,7 @@ import { PlusIcon, TitleSpan, TodoBlog, TodoBody, AddButton, TodoContainer, Todo
 import {RootState} from '../../redux/Store'
 import { useDispatch, useSelector } from 'react-redux';
 import { Add_Todo } from '../../redux/TodoAction';
+import TaskSection from './TaskSection';
 
 const TodoContain = () => {
     const [toggle, setToggle] = useState(false)
@@ -36,7 +37,7 @@ const TodoContain = () => {
                     </TodoElement>
                      <TodoText>On Hold</TodoText>   
                     {
-                        todoList.map((item) => <li>{item.text}</li>)
+                        todoList.map((item) => <TaskSection  key={ item?.id} text={item?.text} />)
                     }
                 </TodoBody>
                 <TodoBlog>

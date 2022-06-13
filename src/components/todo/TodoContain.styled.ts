@@ -4,7 +4,7 @@ import {AiOutlinePlusSquare} from 'react-icons/ai';
 export const TodoContainer = styled.div`
     padding: 40px 0px;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 60% 40%;
     column-gap: 20px;
     @media screen and (max-width:750px) {
         grid-template-columns: 100%  0px;
