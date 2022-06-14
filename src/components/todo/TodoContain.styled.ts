@@ -11,8 +11,7 @@ export const TodoContainer = styled.div`
     }
 `
 export const TodoBody = styled.div`
-    padding: 10px 0px;
-    
+    padding: 10px 0px;    
 `
 export const TodoBlog = styled.div`
     
@@ -35,12 +34,12 @@ export const TitleSpan = styled.span`
 `
 export const AddButton = styled.button`
     padding: 8px 10px;
-    margin-left: 10px;
+    margin: auto;
     background-color:#6600ff;
     border: none;
     border-radius: 8px;
     color: #fff;
-    vertical-align: middle;
+
     cursor: pointer;
     font-size: 14px;
     @media screen and (max-width:440px) {
@@ -58,6 +57,7 @@ export const TodoInput = styled.input`
    border-top: none;
    border-left: none;
    padding: 0px 10px;
+   border-bottom: 1px solid lightgray;
 `
 export const SubmitButton = styled.button`
     padding: 8px 10px;
@@ -81,4 +81,9 @@ export const TodoText = styled.h5`
     padding-top: 40px;
     padding-bottom: 20px;
     color: gray;
+`
+export const TodoError = styled.h5`
+    display: block;
+    color: red;
+    padding: 10px 0px;
 `

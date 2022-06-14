@@ -1,5 +1,8 @@
 import React from "react";
+import { useDispatch} from "react-redux";
+import { Delete_Todo, Itask } from "../../redux/TodoAction";
 import {
+  DeleteButton,
   EditButton,
   TaskCard,
   TaskList,
@@ -9,20 +12,23 @@ import {
 } from "./TaskSection.styled";
 
 interface IProps {
-  text: string;
   Key?: number | string;
+  item:Itask,
 }
 
-const TaskSection = ({ text }: IProps) => {
+const TaskSection = ({item}: IProps) => {
+  const dispatch = useDispatch()
+
   return (
     <>
       <TaskCard>
         <TaskTable>
           <TaskList>
-            <TaskTitle>{text}</TaskTitle>
+            <TaskTitle>{item.text}</TaskTitle>
           </TaskList>
           <TaskStatus>Pending</TaskStatus>
           <EditButton />
+          <DeleteButton onClick={()=>dispatch(Delete_Todo(item))} />
         </TaskTable>
       </TaskCard>
     </>
