@@ -7,7 +7,6 @@ export interface Itask {
     todoError?: null | string,
     length?:number,
 }
-
 const initialState = {
     todoList: [] as Itask[],
 };
@@ -23,9 +22,9 @@ export const todoSlice = createSlice({
             }
             state.todoList.push(todo)
         },
-        Delete_Todo: (state, action) => {
+        Delete_Todo: (state,{payload}:PayloadAction<Itask>) => {
             let {todoList} = state
-            state.todoList = todoList.filter((item)=>item.id !== action.payload.id )
+            state.todoList = todoList.filter((item)=>item.id !== payload.id )
         },
         Edit_Todo: (state,{payload}: PayloadAction<Itask>) => {
             let {todoList} = state;
